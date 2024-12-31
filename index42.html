@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falkland Islands Press, Inc.</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e9d013; /* Light Yellow */
+            color: #6A1B9A; /* Purple */
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #424242; /* Dark Grey */
+            color: #FFF;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        /* Two-Square Section */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Left Square - Autobiography */
+        .autobiography-section {
+            background-color: #aab0db; /* Dark Grey */
+            color: #FFF;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .autobiography-section h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            background: #6A1B9A; /* Purple */
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #FFF;
+        }
+
+        .autobiography-text {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        /* Right Square - Call for Submissions */
+        .call-to-action {
+            background-color: #424242; /* Dark Grey */
+            color: #FFF;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .call-to-action h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .call-to-action p {
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            background-color: #424242;
+            color: #FFF;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: #FFF;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Gaveled House Shape (Single Below Footer) */
+        .house-shape {
+            width: 300px;
+            margin: 30px auto;
+            text-align: center;
+            color: #6A1B9A; /* Purple Text */
+        }
+
+        .house-shape .roof {
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 100px solid #424242; /* Dark Grey */
+        }
+
+        .house-shape .body {
+            background: #424242; /* Dark Grey */
+            color: #FFF;
+            padding: 20px;
+            font-size: 0.9em;
+            line-height: 1.4;
+            border: 1px solid #6A1B9A; /* Purple Border */
+        }
+
+        .house-shape p {
+            margin: 0;
+        }
+
+        /* Popups */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            background-color: #FFF;
+            color: #030009;
+            padding: 20px;
+            border: 1px solid #424242;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .popup .close-btn {
+            float: right;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Falkland Islands Press, Inc.</h1>
+        <h2>"Paradise Found"</h2>
+    </header>
+
+    <!-- Two Squares Side by Side -->
+    <div class="main-container">
+        <!-- Autobiography Section -->
+        <div class="autobiography-section">
+            <div class="profile-picture">
+                <src image="Shujaa Green.jpg">
+                Picture of Shujaa Green
+            </div>
+            <h3> Chief financial officer : Shujaa Green</h3>
+            <div class="autobiography-text">
+                <p>
+                My name is Shujaa Green. I'm an  apsiring Editor with an Associate of Applied Science degree from St.Paul College in ElectroMechanical Automation. 
+                I am currently working on my Bachelors of Science in Business at Metro State University. Im the Co-founder and CEO of The Maplewood Review. 
+                A blog and a newsletter about Climate Justice and Ultra conservative hard left philosophical manuscripts. I am an Independent, and an orientalist. 
+                Ma'salam. 
+                </p>
+            </div>
+        </div>
+
+        <!-- Call for Submissions -->
+        <div class="call-to-action">
+            <h3>Call for Submissions</h3>
+            <p>$15 per poem</p>
+            <p>$45 per short story</p>
+            <p>$60 per essay</p>
+            <p>Entry Fee: $10</p>
+            <p> 5,000 salary for Editor in Chief. </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a onclick="openPopup('about')">About Us</a>
+        <a onclick="openPopup('guidelines')">Submission Guidelines</a>
+        <a onclick="openPopup('contact')">Contact</a>
+        <a onclick="openPopup('privacy')">Privacy Policy</a>
+    </footer>
+
+    <!-- Gaveled House Shape with Hegel Quote (Below Footer) -->
+    <div class="rectangle">
+        <div class="roof"></div>
+        <div class="body">
+            <p>
+                "When philosophy paints its grey on grey, and one form of life has grown old, it cannot be rejuvenated only known, the owl of Minerva first takes flight when dusk is falling."
+            </p>
+        </div>
+    </div>
+
+    <!-- Popups -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="about"><span class="close-btn" onclick="closePopup()">×</span><p>About Us Content</p></div>
+    <div class="popup" id="guidelines"><span class="close-btn" onclick="closePopup()">×</span><p>Guidelines Content</p></div>
+    <div class="popup" id="contact"><span class="close-btn" onclick="closePopup()">×</span><p>Contact Content</p></div>
+    <div class="popup" id="privacy"><span class="close-btn" onclick="closePopup()">×</span><p>Privacy Content</p></div>
+
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
